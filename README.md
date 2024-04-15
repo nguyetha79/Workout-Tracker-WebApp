@@ -10,7 +10,7 @@ The Workout Tracker Web App is a full-stack MERN (MongoDB, Express, React, Node.
 | ***Workout Logging*** | Users can create new workouts, add exercises to their workouts, and specify details such as exercise type, duration, and sets/reps.|
 | ***Dashboard*** | The dashboard displays a summary of the user’s recent workouts and exercise history.|
 | ***Real-time Updates*** | The app provides real-time updates when workout records are added, modified or deleted.|
-| ***Data Storage*** | MongoDB is used to store user data, including workouts and exercises.|
+| ***Title Search*** | The app enables users to filter workouts based on their title search.|
 
 ## Technologies Used
 - **Frontend**: 
