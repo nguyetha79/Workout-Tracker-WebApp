@@ -1,6 +1,6 @@
 # Workout-Tracker-WebApp
 
-The project is a full-stack application built using the MERN stack (MongoDB, Express.js, React, Node.js). This app allows users to track and manage their workout routines.
+The Workout Tracker Web App is a full-stack MERN (MongoDB, Express, React, Node.js) project designed for tracking workouts and exercises. This application allows users to perform CRUD (Create, Read, Update, Delete) operations on workout records. Additionally, it features user authentication using JSON Web Tokens (JWT).
 
 ## Features
 
@@ -9,14 +9,20 @@ The project is a full-stack application built using the MERN stack (MongoDB, Exp
 | ***User Authentication*** | Users can sign up, log in, and log out securely.|
 | ***Workout Logging*** | Users can create new workouts, add exercises to their workouts, and specify details such as exercise type, duration, and sets/reps.|
 | ***Dashboard*** | The dashboard displays a summary of the user’s recent workouts and exercise history.|
-| ***Real-time Updates*** | The app provides real-time updates when new workouts are added or exercises are modified.|
+| ***Real-time Updates*** | The app provides real-time updates when workout records are added, modified or deleted.|
 | ***Data Storage*** | MongoDB is used to store user data, including workouts and exercises.|
 
 ## Technologies Used
-- **Frontend**: React.js for building the user interface.
-- **Backend**: Node.js and Express.js for handling API requests.
-- **Database**: MongoDB for data storage.
-- **Authentication**: Passport.js for user authentication.
+- **Frontend**: 
+    - *React*: Building the user interface.
+    - *React Router*: Handling navigation within the app.
+    - *Form Validation*: Ensuring data integrity.
+- **Backend**: 
+    - *Node.js*: Serving as the backend server.
+    - *Express*: Creating RESTful APIs.
+    - *MongoDB*: Storing workout data.
+    - *JWT*: Providing secure authentication.
+
 - **Deployment**: The app is deployed on the following website: 
 
 ## Getting Started
