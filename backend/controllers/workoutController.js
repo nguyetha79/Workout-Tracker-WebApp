@@ -59,53 +59,13 @@ const createWorkout = async (req, res) => {
   const { title, type, sets, load, reps, restPeriods, tempo, description } =
     req.body;
 
-  let emptyFields = [];
-
-  if (!title) {
-    emptyFields.push("title");
-  }
-
-  if (!type) {
-    emptyFields.push("type");
-  }
-
-  if (!sets) {
-    emptyFields.push("sets");
-  }
-
-  if (!load) {
-    emptyFields.push("load");
-  }
-
-  if (!reps) {
-    emptyFields.push("reps");
-  }
-
-  if (!restPeriods) {
-    emptyFields.push("restPeriods");
-  }
-
-  if (!tempo) {
-    emptyFields.push("tempo");
-  }
-
-  if (!description) {
-    emptyFields.push("description");
-  }
-
-  if (emptyFields.length > 0) {
-    return res
-      .status(400)
-      .json({ error: "Please fill in all the fields", emptyFields });
-  }
-
   // add doc to db
   try {
     const user_id = req.user._id;
     const workout = await Workout.create({ title, type, sets, load, reps, restPeriods, tempo, description, user_id });
     res.status(200).json(workout);
   } catch (err) {
-    res.status(400).json({ error: err.message, emptyFields });
+    res.status(400).json({ error: err.message});
   }
 };
 

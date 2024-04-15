@@ -33,6 +33,23 @@ const Create = () => {
       return;
     }
 
+    // Check if any fields are empty
+    const emptyFieldsArray = [];
+    if (!title) emptyFieldsArray.push("title");
+    if (!type) emptyFieldsArray.push("type");
+    if (!sets) emptyFieldsArray.push("sets");
+    if (!load) emptyFieldsArray.push("load");
+    if (!reps) emptyFieldsArray.push("reps");
+    if (!restPeriods) emptyFieldsArray.push("restPeriods");
+    if (!tempo) emptyFieldsArray.push("tempo");
+    if (!description) emptyFieldsArray.push("description");
+    
+    if (emptyFieldsArray.length > 0) {
+      setError("Please fill out all required fields.");
+      setEmptyFields(emptyFieldsArray);
+      return;
+    }
+
     const workout = {
       title,
       type,
@@ -60,8 +77,6 @@ const Create = () => {
     }
 
     if (response.ok) {
-      setEmptyFields([]);
-      setError(null);
       setTitle("");
       setType("");
       setSets("");
@@ -70,6 +85,8 @@ const Create = () => {
       setRestPeriods("");
       setTempo("");
       setDescription("");
+      setError(null);
+      setEmptyFields([]);
       dispatch({ type: "CREATE_WORKOUT", payload: json });
     }
 

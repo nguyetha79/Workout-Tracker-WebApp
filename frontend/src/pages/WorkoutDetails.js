@@ -34,6 +34,7 @@ const WorkoutDetails = () => {
   const [tempo, setTempo] = useState("");
   const [description, setDescription] = useState("");
   const [emptyFields, setEmptyFields] = useState([]);
+  const [emptyError, setEmptyError] = useState(null);
 
   // useEffect(() => {
   //   setTitle(workout.title)
@@ -43,6 +44,23 @@ const WorkoutDetails = () => {
     if (!user) {
       return;
     }
+
+     // Check if any fields are empty
+     const emptyFieldsArray = [];
+     if (!title) emptyFieldsArray.push("title");
+     if (!type) emptyFieldsArray.push("type");
+     if (!sets) emptyFieldsArray.push("sets");
+     if (!load) emptyFieldsArray.push("load");
+     if (!reps) emptyFieldsArray.push("reps");
+     if (!restPeriods) emptyFieldsArray.push("restPeriods");
+     if (!tempo) emptyFieldsArray.push("tempo");
+     if (!description) emptyFieldsArray.push("description");
+     
+     if (emptyFieldsArray.length > 0) {
+       setEmptyError("Please fill out all required fields.");
+       setEmptyFields(emptyFieldsArray);
+       return;
+     } 
 
     const response = await fetch("api/workouts/" + workout_id, {
       method: "DELETE",
@@ -170,7 +188,7 @@ const WorkoutDetails = () => {
               </div>
         
               <button>Update Workout</button>
-              {error && <div className="error">{error}</div>}
+              {emptyError && <div className="error">{emptyError}</div>}
             </form>
           ): (
             <div>
