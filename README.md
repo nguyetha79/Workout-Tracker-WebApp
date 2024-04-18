@@ -27,8 +27,10 @@ The Workout Tracker Web App is a full-stack MERN (MongoDB, Express, React, Node.
 
 ## Getting Started
 1. Clone this repository.
-2. Install dependencies using npm install.
-3. Run the app locally using npm start.
+2. Install dependencies using `npm install`.
+3. Run the app locally using 
+    - frontend: `npm run start`.
+    - backend: `npm run dev`.
 4. Access the app in your browser at localhost:3000.
 
 ## Citations
