@@ -33,6 +33,10 @@ The Workout Tracker Web App is a full-stack MERN (MongoDB, Express, React, Node.
     - backend: `npm run dev`.
 4. Access the app in your browser at localhost:3000.
 
+## Group Work
+- Nguyet Ha Phung: UI Design, create, read and delete functions
+- Viet Hang Thu Le: Update and search functions
+
 ## Citations
 
 The projects in this repository were inspired by, or based on, the following resources:
