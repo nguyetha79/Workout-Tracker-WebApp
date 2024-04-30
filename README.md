@@ -23,8 +23,6 @@ The Workout Tracker Web App is a full-stack MERN (MongoDB, Express, React, Node.
     - *MongoDB*: Storing workout data.
     - *JWT*: Providing secure authentication.
 
-- **Deployment**: The app is deployed on the following website: 
-
 ## Getting Started
 1. Clone this repository.
 2. Install dependencies using `npm install`.
