@@ -61,7 +61,7 @@ const Create = () => {
       description,
     };
 
-    const response = await fetch("/api/workouts/", {
+    const response = await fetch("api/workouts/", {
       method: "POST",
       body: JSON.stringify(workout),
       headers: {

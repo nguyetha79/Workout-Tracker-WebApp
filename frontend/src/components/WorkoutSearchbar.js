@@ -16,7 +16,7 @@ const WorkoutSearchbar = () => {
       return;
     }
 
-    const response = await fetch("/api/workouts/search?title=" + search, {
+    const response = await fetch("api/workouts/search?title=" + search, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
