@@ -9,7 +9,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
