@@ -96,7 +96,7 @@ const WorkoutDetails = () => {
     const json = await response.json();
 
     if (json.error) {
-      setError(json.error);
+      setEmptyError(json.error);
       setEmptyFields(json.emptyFields);
     }
 
