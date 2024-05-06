@@ -5,7 +5,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 const WorkoutSearchbar = () => {
   const [search, setSearch] = useState("");
   const { user } = useAuthContext();
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
   const { dispatch } = useWorkoutsContext();
 
   const handleSearch = async (value) => {
