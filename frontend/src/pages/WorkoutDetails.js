@@ -45,23 +45,6 @@ const WorkoutDetails = () => {
       return;
     }
 
-     // Check if any fields are empty
-     const emptyFieldsArray = [];
-     if (!title) emptyFieldsArray.push("title");
-     if (!type) emptyFieldsArray.push("type");
-     if (!sets) emptyFieldsArray.push("sets");
-     if (!load) emptyFieldsArray.push("load");
-     if (!reps) emptyFieldsArray.push("reps");
-     if (!restPeriods) emptyFieldsArray.push("restPeriods");
-     if (!tempo) emptyFieldsArray.push("tempo");
-     if (!description) emptyFieldsArray.push("description");
-     
-     if (emptyFieldsArray.length > 0) {
-       setEmptyError("Please fill out all required fields.");
-       setEmptyFields(emptyFieldsArray);
-       return;
-     } 
-
     const response = await fetch("api/workouts/" + workout_id, {
       method: "DELETE",
       headers: {
@@ -81,6 +64,23 @@ const WorkoutDetails = () => {
     if (!user) {
       return;
     }
+    
+    // Check if any fields are empty
+    const emptyFieldsArray = [];
+    if (!title) emptyFieldsArray.push("title");
+    if (!type) emptyFieldsArray.push("type");
+    if (!sets) emptyFieldsArray.push("sets");
+    if (!load) emptyFieldsArray.push("load");
+    if (!reps) emptyFieldsArray.push("reps");
+    if (!restPeriods) emptyFieldsArray.push("restPeriods");
+    if (!tempo) emptyFieldsArray.push("tempo");
+    if (!description) emptyFieldsArray.push("description");
+    
+    if (emptyFieldsArray.length > 0) {
+      setEmptyError("Please fill out all required fields.");
+      setEmptyFields(emptyFieldsArray);
+      return;
+    } 
 
     let body = {title, type, sets, load, reps, restPeriods, tempo, description}
     console.log(title)
@@ -94,6 +94,11 @@ const WorkoutDetails = () => {
       body: JSON.stringify(body)
     });
     const json = await response.json();
+
+    if (json.error) {
+      setError(json.error);
+      setEmptyFields(json.emptyFields);
+    }
 
     if (response.ok) {
       dispatch({ type: "UPDATE_WORKOUT", payload: json });
