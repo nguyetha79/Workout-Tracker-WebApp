@@ -15,8 +15,6 @@ const userRoutes = require("./routes/userRoutes");
 const app = express();
 //middleware
 app.use(express.json());
-app.use(bodyParser.json({ limit: "30mb", extented: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extented: true }));
 
 app.use((req, res, next) => {
   console.log(req.path, req.method);
