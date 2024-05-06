@@ -16,7 +16,7 @@ const WorkoutSearchbar = () => {
       return;
     }
 
-    const response = await fetch("api/workouts/search?title=" + search, {
+    const response = await fetch("https://workout-tracker-webapp.onrender.com/api/workouts/search?title=" + search, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",

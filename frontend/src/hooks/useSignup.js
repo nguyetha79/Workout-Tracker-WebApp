@@ -16,7 +16,7 @@ export const useSignup = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('api/users/signup', {
+    const response = await fetch('https://workout-tracker-webapp.onrender.com/api/users/signup', {
       method: 'POST',
       mode: 'cors',
       headers: {'Content-Type': 'application/json'},

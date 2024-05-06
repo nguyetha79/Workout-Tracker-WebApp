@@ -20,7 +20,7 @@ const WorkoutDetails = () => {
     data: workout,
     error,
     isPending,
-  } = useFetch("api/workouts/" + workout_id);
+  } = useFetch("https://workout-tracker-webapp.onrender.com/api/workouts/" + workout_id);
   const { dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const WorkoutDetails = () => {
       return;
     }
 
-    const response = await fetch("api/workouts/" + workout_id, {
+    const response = await fetch("https://workout-tracker-webapp.onrender.com/api/workouts/" + workout_id, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${user.token}`,
