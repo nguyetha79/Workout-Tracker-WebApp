@@ -15,7 +15,6 @@ const userRoutes = require("./routes/userRoutes");
 const app = express();
 //middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false}));
 
 app.use((req, res, next) => {
   console.log(req.path, req.method);
