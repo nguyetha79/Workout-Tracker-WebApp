@@ -45,7 +45,7 @@ const WorkoutDetails = () => {
       return;
     }
 
-    const response = await fetch("https://workout-tracker-webapp.onrender.com/api/workouts/" + workout_id, {
+    const response = await fetch("/api/workouts/" + workout_id, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${user.token}`,
@@ -85,7 +85,7 @@ const WorkoutDetails = () => {
     let body = {title, type, sets, load, reps, restPeriods, tempo, description}
     console.log(title)
 
-    const response = await fetch("https://workout-tracker-webapp.onrender.com/api/workouts/" + workout_id, {
+    const response = await fetch("/api/workouts/" + workout_id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
