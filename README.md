@@ -34,11 +34,3 @@ The Workout Tracker Web App is a full-stack MERN (MongoDB, Express, React, Node.
 ## Group Work
 - Nguyet Ha Phung: UI Design, create, read and delete functions
 - Viet Hang Thu Le: Update and search functions
-
-## Citations
-
-The project in this repository was inspired by, or based on, the following resources:
-
-1. Net Ninja
-2. dcode
-3. Tobisamcodes
